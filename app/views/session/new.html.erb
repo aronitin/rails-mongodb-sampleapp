@@ -1,0 +1,27 @@
+<div class="signing-form">
+	<% if @error_message %>
+		<div class="error_messages signing-error">
+			<ul>
+				<li><%= @error_message %></li>
+			</ul>
+		</div>
+	<% else %>
+		<% flash.each do |name, message| %>	
+			<%= content_tag :div, message, :id => "flash_#{name}" %>
+		<% end %>	
+	<% end %>
+
+	<%= form_tag login_path do %>
+		<div>
+			<label for="">UserName</label>
+			<%= text_field_tag :username, params[:username], :class => "textbox-a", :placeholder => "UserName" %>
+		</div>
+		<div>
+			<label for="">Password</label>
+			<%= password_field_tag :password, '', :class => "textbox-a", :placeholder => "Password" %>
+		</div>
+		<div>
+			<%= submit_tag "Log In", :class => "btn-a" %>
+		</div>
+	<% end %>	
+</div>
