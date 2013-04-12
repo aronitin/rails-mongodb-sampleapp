@@ -11,6 +11,9 @@
 		<div class="blue-b">
 			<%= render :partial => 'layouts/header_nav' %>
 		</div>
+		<% if current_user %>
+			<%= render :partial =>  'layouts/actions_nav' %>
+		<% end %>
 		<div class="mc-a">
 			<%= yield %>
 		</div>

@@ -8,6 +8,7 @@ class User
   field :username, type: String
   field :crypted_password, type: String
   field :salt, type: String
+  field :role, type: String, default: USER_ROLES[1]
 
   attr_accessor :password, :password_confirmation
 
@@ -15,5 +16,9 @@ class User
   validates_presence_of :password, :on => :create
   validates_presence_of :username
   validates_uniqueness_of :username
+
+  def is_admin?
+    role.eql? USER_ROLES[0]    
+  end
 
 end

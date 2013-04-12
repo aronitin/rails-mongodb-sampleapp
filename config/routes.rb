@@ -6,6 +6,18 @@ RailsExpenseReportMongo::Application.routes.draw do
   get "signup" => "users#new", :as => "signup"
 
   resources :users
+  
+  resources :expenses do
+    member do
+      put :update_status
+    end
+
+    collection do
+      get :approvals
+    end
+
+  end 
+
 
   root :to => "session#new"
 

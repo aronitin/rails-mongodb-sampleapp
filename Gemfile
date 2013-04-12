@@ -8,7 +8,11 @@ gem 'mongo', '1.8.4'
 
 gem 'mongoid', '2.4.6'
 
+gem 'carrierwave-mongoid'
+
 gem 'sorcery'
+
+gem 'kaminari'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
